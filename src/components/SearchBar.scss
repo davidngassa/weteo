@@ -1,0 +1,19 @@
+@import "../style_variables";
+
+.search_bar {
+  border: 1px solid $gray;
+  padding: 10px 20px;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+
+  #search_input {
+    border: none;
+    font-size: 30px;
+    width: 100%;
+  }
+
+  #search_input:focus {
+    outline: none;
+  }
+}
