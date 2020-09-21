@@ -2,18 +2,24 @@
 
 .search_bar {
   border: 1px solid $gray;
-  padding: 10px 20px;
+  padding: 10px;
   width: 50%;
   margin: 0 auto;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
 
   #search_input {
     border: none;
-    font-size: 30px;
+    font-size: 2em;
     width: 100%;
   }
 
   #search_input:focus {
     outline: none;
+  }
+
+  .search_icon {
+    margin-right: 10px;
   }
 }
