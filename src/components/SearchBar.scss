@@ -1,7 +1,7 @@
 @import "../style_variables";
 
 .search_bar {
-  padding: 10px 20px;
+  padding: 10px;
   width: 50%;
   margin: 0 auto;
   border-radius: 10px;
@@ -12,7 +12,7 @@
 
   #search_input {
     border: none;
-    font-size: 2em;
+    font-size: 1.8em;
     width: 100%;
     font-family: $font_regular;
     background-color: transparent;
@@ -24,6 +24,10 @@
 
   .search_icon {
     margin-right: 10px;
+  }
+
+  #clear_button {
+    cursor: pointer;
   }
 }
 

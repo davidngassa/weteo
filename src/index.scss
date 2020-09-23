@@ -35,6 +35,12 @@ a {
   color: $black;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
 #root {
   height: 100%;
   display: flex;
