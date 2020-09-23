@@ -8,6 +8,8 @@ import SearchSuggestion from "../../components/SearchSuggestion";
 import CityWeather from "../../components/CityWeather";
 import LoadingAnimation from "../../components/LoadingAnimation";
 
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
 const HomePage = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedCityData, setselectedCityData] = useState();
@@ -42,7 +44,7 @@ const HomePage = () => {
     setSelectedCityCountry(country);
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=hourly,minutely&appid=f4b65f853d87512bf119646ce5b42b6d&units=metric`
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=hourly,minutely&appid=${API_KEY}&units=metric`
       );
 
       const responseJson = await response.json();
