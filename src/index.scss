@@ -19,14 +19,27 @@ html {
 }
 
 body {
-  margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
   color: $black;
+  width: 93vw;
   max-width: 1300px;
+  height: 100vh;
   margin: auto;
-  font-family: $font_regular;
+  font-family: $font_regular, sans-serif;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @font-face {

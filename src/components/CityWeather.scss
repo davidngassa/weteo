@@ -1,0 +1,70 @@
+@import "../style_variables";
+
+.city_weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+
+  .current_weather_container {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .city_name {
+      font-size: 1.7em;
+      font-family: $font_semibold;
+      margin: 10px 0;
+    }
+
+    .current_weather_description {
+      color: $dark_gray;
+
+      p {
+        margin: 5px 0;
+      }
+
+      .current_weather_mood {
+        text-transform: capitalize;
+      }
+    }
+
+    .current_weather_visual {
+      display: flex;
+      align-items: center;
+      height: 200px;
+
+      p {
+        font-size: 2em;
+        font-family: $font_bold;
+      }
+    }
+  }
+
+  .forecast_container {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: $width_breakpoint) {
+  .city_weather {
+    margin-top: 0vh;
+    .current_weather_container {
+      width: 75%;
+
+      .current_weather_visual {
+        img {
+          height: 150px;
+        }
+      }
+    }
+    .forecast_container {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import "../style_variables";
+
+.day_forecast {
+  text-align: center;
+  margin-top: 20px;
+  p {
+    color: $dark_gray;
+    margin: 0;
+  }
+
+  .forecast_icon {
+    height: 100px;
+  }
+
+  .forecast_temp_container {
+    display: flex;
+    justify-content: space-evenly;
+
+    .forecast_temp_max {
+      color: $black;
+    }
+  }
+}
+
+@media (max-width: $width_breakpoint) {
+  .day_forecast {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .forecast_icon {
+      height: 75px;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .forecast_temp_container {
+      p {
+        margin-left: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import "../style_variables";
+
+.search_suggestion {
+  width: 50%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin: 5px 0;
+  background-color: $gray;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 1.3em;
+  outline: none;
+  border: 1px solid transparent;
+  opacity: 0.5;
+}
+
+.search_suggestion:hover {
+  //border: 1px solid $dark_gray;
+  opacity: 1;
+}
+
+.search_suggestion:first-child {
+  margin-top: 20px;
+}
+
+@media (max-width: $width_breakpoint) {
+  .search_suggestion {
+    width: 75%;
+    font-size: 1em;
+  }
+}

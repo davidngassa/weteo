@@ -24,7 +24,7 @@ const SearchBar = (props) => {
         spellCheck="false"
         placeholder="Search for a city"
         autoFocus
-        //onChange={(text) => props.onChangeText(text.target.value)}
+        onChange={(text) => props.onChangeText(text.target.value)}
       ></input>
     </div>
   );
