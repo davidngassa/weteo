@@ -21,18 +21,19 @@ html {
 body {
   padding: 0;
   box-sizing: border-box;
-  color: $black;
+  color: $text_color;
   width: 93vw;
   max-width: 1300px;
   height: 100vh;
   margin: auto;
   font-family: $font_regular, sans-serif;
   position: relative;
+  background-color: $background_color;
 }
 
 a {
   text-decoration: none;
-  color: $black;
+  color: $text_color;
 }
 
 button {
