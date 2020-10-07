@@ -8,7 +8,8 @@ import SearchSuggestion from "../../components/SearchSuggestion";
 import CityWeather from "../../components/CityWeather";
 import LoadingAnimation from "../../components/LoadingAnimation";
 
-const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 
 const HomePage = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -44,7 +45,7 @@ const HomePage = () => {
     setSelectedCityCountry(country);
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=hourly,minutely&appid=${API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=hourly,minutely&appid=${WEATHER_API_KEY}&units=metric`
       );
 
       const responseJson = await response.json();
@@ -67,8 +68,7 @@ const HomePage = () => {
           method: "GET",
           headers: {
             "x-rapidapi-host": "newscatcher.p.rapidapi.com",
-            "x-rapidapi-key":
-              "86746836femsh8cc18f32d9126a2p1c8cc7jsn99490fc4bdaf",
+            "x-rapidapi-key": `${NEWS_API_KEY}`,
           },
         }
       );
