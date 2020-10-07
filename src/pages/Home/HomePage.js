@@ -15,6 +15,7 @@ const HomePage = () => {
   const [selectedCityData, setselectedCityData] = useState();
   const [selectedCityName, setSelectedCityName] = useState("");
   const [selectedCityCountry, setSelectedCityCountry] = useState("");
+  const [articles, setArticles] = useState([]);
   const [isResultsVisible, setResultsVisibility] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -39,7 +40,6 @@ const HomePage = () => {
 
   const getCityWeather = async (coordinates, name, country) => {
     setResultsVisibility(false);
-    setIsLoading(true);
     setSelectedCityName(name);
     setSelectedCityCountry(country);
     try {
@@ -57,7 +57,38 @@ const HomePage = () => {
     } catch (err) {
       console.log(err);
     }
+  };
+
+  const getNews = async (cityName) => {
+    try {
+      const response = await fetch(
+        `https://newscatcher.p.rapidapi.com/v1/search?media=True&sort_by=relevancy&topic=news&lang=en&page=1&q=${cityName}`,
+        {
+          method: "GET",
+          headers: {
+            "x-rapidapi-host": "newscatcher.p.rapidapi.com",
+            "x-rapidapi-key":
+              "86746836femsh8cc18f32d9126a2p1c8cc7jsn99490fc4bdaf",
+          },
+        }
+      );
+
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        throw new Error(responseData.message);
+      } else {
+        setArticles(responseData.articles);
+      }
+    } catch (error) {
+      console.log(error);
+    }
     setIsLoading(false);
+  };
+
+  const handleCitySelect = async (coordinates, name, countryCode) => {
+    setIsLoading(true);
+    getCityWeather(coordinates, name, countryCode).then(() => getNews(name));
   };
 
   let content;
@@ -80,7 +111,7 @@ const HomePage = () => {
                 name={city.name}
                 country={city.country}
                 onCitySelect={() =>
-                  getCityWeather(city.coord, city.name, city.country)
+                  handleCitySelect(city.coord, city.name, city.country)
                 }
               />
             ))}
