@@ -3,7 +3,10 @@
 .footer {
   width: 100%;
   text-align: center;
-  color: $gray;
+  color: $text_color;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 @media (max-width: $width_breakpoint) {

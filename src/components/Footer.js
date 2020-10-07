@@ -4,11 +4,11 @@ import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <p>
         by <span>David Ngassa</span>
       </p>
-    </div>
+    </footer>
   );
 };
 

@@ -1,0 +1,11 @@
+@import "../style_variables";
+
+.city_news {
+  margin-top: 100px;
+  width: 100%;
+
+  .empty_state_message {
+    color: $dark_gray;
+    text-align: center;
+  }
+}

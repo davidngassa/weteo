@@ -5,8 +5,9 @@ import citiesList from "../../data/cities.json";
 
 import SearchBar from "../../components/SearchBar";
 import SearchSuggestion from "../../components/SearchSuggestion";
-import CityWeather from "../../components/CityWeather";
 import LoadingAnimation from "../../components/LoadingAnimation";
+import CityWeather from "../../components/CityWeather";
+import CityNews from "../../components/CityNews";
 
 const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
@@ -63,7 +64,7 @@ const HomePage = () => {
   const getNews = async (cityName) => {
     try {
       const response = await fetch(
-        `https://newscatcher.p.rapidapi.com/v1/search?media=True&sort_by=relevancy&topic=news&lang=en&page=1&q=${cityName}`,
+        `https://newscatcher.p.rapidapi.com/v1/search?media=True&sort_by=date&topic=news&lang=en&page=1&q=${cityName}`,
         {
           method: "GET",
           headers: {
@@ -119,11 +120,14 @@ const HomePage = () => {
       );
     } else {
       content = (
-        <CityWeather
-          data={selectedCityData}
-          name={selectedCityName}
-          country={selectedCityCountry}
-        />
+        <React.Fragment>
+          <CityWeather
+            data={selectedCityData}
+            name={selectedCityName}
+            country={selectedCityCountry}
+          />
+          <CityNews data={articles} />
+        </React.Fragment>
       );
     }
   }
