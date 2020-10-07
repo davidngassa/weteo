@@ -4,8 +4,6 @@ import "./CityWeather.scss";
 import DayForecast from "./DayForecast";
 
 const CityWeather = (props) => {
-  console.log(props.data);
-
   const current = props.data.current;
   const currentWeatherIcon = current.weather[0].icon;
 
