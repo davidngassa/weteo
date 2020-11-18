@@ -49,6 +49,15 @@ button {
   justify-content: space-between;
 }
 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: "$dark_gray";
+  outline: 1px solid $dark_gray;
+}
+
 @font-face {
   font-family: "Inter";
   src: local("Inter"), url("./fonts/Inter-Regular.ttf") format("truetype");
